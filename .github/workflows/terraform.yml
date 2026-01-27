@@ -4,12 +4,12 @@ on:
   push:
     branches: [ "main" ]
     paths:
-      - "infra/**"
+      - "Infra/**"
       - ".github/workflows/terraform.yml"
   pull_request:
     branches: [ "main" ]
     paths:
-      - "infra/**"
+      - "Infra/**"
 
 permissions:
   id-token: write   # required for OIDC
@@ -30,7 +30,7 @@ jobs:
         uses: aws-actions/configure-aws-credentials@v4
         with:
           role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
-          aws-region: ${{ vars.AWS_REGION }}
+          aws-region: ${{ secrets.AWS_REGION }}
 
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v3

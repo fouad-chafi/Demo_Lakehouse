@@ -7,7 +7,7 @@ variable "aws_region" {
 variable "project_name" {
   type        = string
   description = "Project/name prefix for resources"
-  default     = "aws-demo-datalake"
+  default     = "Lakehouse-demo"
 }
 
 variable "s3_bucket_name" {
@@ -18,7 +18,7 @@ variable "s3_bucket_name" {
 
 variable "glue_database_name" {
   type        = string
-  default     = "demo_datalake"
+  default     = "demo_Lakehouse"
 }
 
 variable "glue_crawler_name" {

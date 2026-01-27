@@ -49,7 +49,7 @@ locals {
   glue_table_name = "big_mac_index"
 }
 
-resource "aws_lakeformation_lf_tag_assignment" "table_tags" {
+resource "aaws_lakeformation_resource_lf_tags" "table_tags" {
   lf_tag {
     key   = aws_lakeformation_lf_tag.domain.key
     value = "economics"

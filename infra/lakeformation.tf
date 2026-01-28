@@ -97,6 +97,6 @@ resource "aws_lakeformation_permissions" "analyst_select_via_tags" {
   }
 
   depends_on = [
-    aws_lakeformation_lf_tag_assignment.table_tags
+    aws_lakeformation_resource_lf_tags.table_tags
   ]
 }

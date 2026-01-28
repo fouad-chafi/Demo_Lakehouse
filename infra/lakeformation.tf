@@ -77,7 +77,7 @@ resource "aws_lakeformation_resource_lf_tags" "table_tags" {
 #############################################
 
 resource "aws_lakeformation_permissions" "analyst_select_via_tags" {
-  count     = var.create_analyst_role ? 1 : 0
+  count     = 0
   principal = aws_iam_role.analyst[0].arn
 
   permissions = ["SELECT", "DESCRIBE"]

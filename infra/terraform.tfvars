@@ -45,3 +45,6 @@ create_analyst_role = true
 
 # Only used if create_analyst_role = true
 analyst_role_name = "demo-analyst-role"
+
+
+enable_lf_table_governance = true

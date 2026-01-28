@@ -3,13 +3,7 @@ name: Terraform Lake Formation Pipeline
 on:
   push:
     branches: [ "main" ]
-    paths:
-      - "infra/**"
-      - ".github/workflows/new-pipe.yml"
-  pull_request:
-    branches: [ "main" ]
-    paths:
-      - "infra/**"
+   
 
 permissions:
   id-token: write
@@ -38,9 +32,11 @@ jobs:
     # PHASE 1: Infra
     # -------------------------
     - name: Terraform Init
+      working-directory: infra
       run: terraform init
 
     - name: Terraform Apply (infra only)
+      working-directory: infra
       run: |
         terraform apply -auto-approve \
           -var="enable_lf_table_governance=false"

@@ -60,12 +60,12 @@ resource "aws_lakeformation_resource_lf_tags" "table_tags" {
     value = "public"
   }
 
-  resource {
+  
     table {
       database_name = aws_glue_catalog_database.db.name
       name          = local.glue_table_name
     }
-  }
+  
 
   depends_on = [
     aws_glue_crawler.crawler

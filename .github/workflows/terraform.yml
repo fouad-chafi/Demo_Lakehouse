@@ -2,7 +2,7 @@ name: Terraform Deploy (AWS)
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "m" ]
     paths:
       - "infra/**"
       - ".github/workflows/terraform.yml"

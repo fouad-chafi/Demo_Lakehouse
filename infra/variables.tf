@@ -48,3 +48,15 @@ variable "analyst_role_name" {
   type        = string
   default     = "demo-analyst-role"
 }
+
+variable "enable_table_tagging" {
+  type        = bool
+  description = "Enable LF tag assignment to the Glue table (requires the table to already exist)."
+  default     = false
+}
+
+variable "enable_lf_table_governance" {
+  type        = bool
+  description = "Enable LF tag assignment and permissions on Glue tables"
+  default     = false
+}

@@ -50,6 +50,8 @@ locals {
 }
 
 resource "aws_lakeformation_resource_lf_tags" "table_tags" {
+  count = var.enable_lf_table_governance ? 1 : 0
+
   lf_tag {
     key   = aws_lakeformation_lf_tag.domain.key
     value = "economics"
@@ -60,24 +62,19 @@ resource "aws_lakeformation_resource_lf_tags" "table_tags" {
     value = "public"
   }
 
-  
-    table {
-      database_name = aws_glue_catalog_database.db.name
-      name          = local.glue_table_name
-    }
-  
-
-  depends_on = [
-    aws_glue_crawler.crawler
-  ]
+  table {
+    database_name = aws_glue_catalog_database.db.name
+    name          = local.glue_table_name
+  }
 }
+
 
 #############################################
 # Grant analyst SELECT via LF-Tag Policy
 #############################################
 
 resource "aws_lakeformation_permissions" "analyst_select_via_tags" {
-  count     = 0
+  count     = var.enable_lf_table_governance ? 1 : 0
   principal = aws_iam_role.analyst[0].arn
 
   permissions = ["SELECT", "DESCRIBE"]
@@ -100,3 +97,4 @@ resource "aws_lakeformation_permissions" "analyst_select_via_tags" {
     aws_lakeformation_resource_lf_tags.table_tags
   ]
 }
+

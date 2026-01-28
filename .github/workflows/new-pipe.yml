@@ -3,6 +3,13 @@ name: Terraform Lake Formation Pipeline
 on:
   push:
     branches: [ "main" ]
+    paths:
+      - "infra/**"
+      - ".github/workflows/new-pipe.yml"
+  pull_request:
+    branches: [ "main" ]
+    paths:
+      - "infra/**"
 
 permissions:
   id-token: write

@@ -64,6 +64,7 @@ jobs:
     # PHASE 3: LF Governance
     # -------------------------
     - name: Terraform Apply (LF tags + permissions)
+      working-directory: infra
       run: |
         terraform apply -auto-approve \
           -var="enable_lf_table_governance=true"

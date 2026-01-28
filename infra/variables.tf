@@ -18,7 +18,7 @@ variable "s3_bucket_name" {
 
 variable "glue_database_name" {
   type        = string
-  default     = "demo_Lakehouse"
+  default     = "demo_datalake"
 }
 
 variable "glue_crawler_name" {

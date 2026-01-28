@@ -40,14 +40,14 @@ jobs:
       - name: Terraform fmt
         run: terraform fmt -recursive
 
-      - name: Verify AWS Access
+      
+      - name: Terraform Init
         run: |
-         aws sts get-caller-identity
-         aws s3 ls s3://tfstate-0749/ || echo "Cannot access S3 bucket"
-         aws dynamodb describe-table --table-name terraform-locks --region eu-central-1 || echo "Cannot access DynamoDB table"
-
-      - name: Terraform init
-        run: terraform init
+         terraform init \
+          -backend-config="bucket=tfstate-0749" \
+          -backend-config="key=aws-demo-datalake/terraform.tfstate" \
+          -backend-config="region=eu-central-1" \
+          -backend-config="dynamodb_table=terraform-locks"
 
       - name: Terraform validate
         run: terraform validate

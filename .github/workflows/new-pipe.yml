@@ -67,4 +67,13 @@ jobs:
       working-directory: infra
       run: |
         terraform apply -auto-approve \
-          -var="enable_lf_table_governance=true"
+        -var-file=terraform.tfvars \
+        -var="enable_lf_table_governance=true"
+
+    - name: Debug - show enable_lf_table_governance
+      working-directory: infra
+      run: |
+        terraform console <<'EOF'
+        var.enable_lf_table_governance
+        EOF
+

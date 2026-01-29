@@ -27,7 +27,7 @@ lakeformation_admin_arns = [
 # Glue
 #############################################
 
-glue_database_name = "demo_datalake"
+glue_database_name = "demo_datalake-v2"
 glue_crawler_name  = "demo_bigmac_crawler"
 
 #############################################
@@ -44,7 +44,9 @@ athena_workgroup_name = "demo-wg"
 create_analyst_role = true
 
 # Only used if create_analyst_role = true
-analyst_role_name = "demo-analyst-role"
+analyst_role_name = "demo-analyst-role-v2"
+
 
 
 enable_lf_table_governance = true
+create_lf_tags             = false

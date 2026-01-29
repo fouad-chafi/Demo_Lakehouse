@@ -60,3 +60,8 @@ variable "enable_lf_table_governance" {
   description = "Enable LF tag assignment and permissions on Glue tables"
   default     = false
 }
+variable "create_lf_tags" {
+  type        = bool
+  description = "Create LF-Tag keys (domain, sensitivity). Only set true the first time per account/region."
+  default     = false
+}

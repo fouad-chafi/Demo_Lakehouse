@@ -43,7 +43,7 @@ jobs:
         run: |
           terraform apply -auto-approve \
             -var-file=terraform.tfvars \
-            -var="enable_lf_table_governance=false"
+            -var="enable_lf_table_governance=true"
 
       # -------------------------
       # PHASE 2: Run Glue crawler

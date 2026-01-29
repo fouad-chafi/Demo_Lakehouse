@@ -28,3 +28,7 @@ locals {
   raw_prefix     = "raw/big_mac_index/"
    athena_prefix = "athena-results/"
 }
+
+output "enable_lf_table_governance" {
+  value = var.enable_lf_table_governance
+}

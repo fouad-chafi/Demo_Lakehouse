@@ -35,6 +35,11 @@ jobs:
       working-directory: infra
       run: terraform init
 
+    - name: Debug - show enable_lf_table_governance
+      working-directory: infra
+      run: terraform output -raw enable_lf_table_governance
+  
+
     - name: Terraform Apply (infra only)
       working-directory: infra
       run: |
@@ -70,10 +75,5 @@ jobs:
         -var-file=terraform.tfvars \
         -var="enable_lf_table_governance=true"
 
-    - name: Debug - show enable_lf_table_governance
-      working-directory: infra
-      run: |
-        terraform console <<'EOF'
-        var.enable_lf_table_governance
-        EOF
+
 

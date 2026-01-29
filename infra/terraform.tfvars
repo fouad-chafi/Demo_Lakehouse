@@ -48,5 +48,5 @@ analyst_role_name = "demo-analyst-role-v2"
 
 
 
-enable_lf_table_governance = true
+enable_lf_table_governance = flase
 create_lf_tags             = false

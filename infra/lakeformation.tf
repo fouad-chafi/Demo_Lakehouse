@@ -103,3 +103,23 @@ resource "aws_lakeformation_permissions" "analyst_select_via_tags" {
     aws_lakeformation_resource_lf_tags.table_tags
   ]
 }
+# Allow Glue crawler role to create/update tables in the governed database
+
+resource "aws_lakeformation_permissions" "glue_db_permissions" {
+  principal = aws_iam_role.glue_role.arn
+
+  database {
+    name = aws_glue_catalog_database.db.name
+  }
+
+  permissions = [
+    "CREATE_TABLE",
+    "ALTER",
+    "DROP",
+    "DESCRIBE"
+  ]
+
+  depends_on = [
+    aws_lakeformation_data_lake_settings.this
+  ]
+}

@@ -3,7 +3,7 @@
 #############################################
 
 aws_region   = "eu-central-1"
-project_name = "aws-demo-datalake"
+project_name = "aws-demo-datalake-v2"
 
 # Optional: leave empty to auto-generate bucket name with account id
 # s3_bucket_name = "aws-demo-datalake-eu-central-1-123456789012"

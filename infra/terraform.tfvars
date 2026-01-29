@@ -28,7 +28,7 @@ lakeformation_admin_arns = [
 #############################################
 
 glue_database_name = "demo_datalake-v2"
-glue_crawler_name  = "demo_bigmac_crawler"
+glue_crawler_name  = "demo_bigmac_crawler-v2"
 
 #############################################
 # Athena
